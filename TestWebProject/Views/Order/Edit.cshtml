@@ -1,0 +1,52 @@
+﻿@model TestWebProject.Models.Entities.Order
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Окно редактирования информации</h4>
+
+<form asp-controller="Order" asp-action="Edit" method="post">
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group">
+                <label asp-for="SenderСity" class="control_label"></label>
+                <input name="SenderСity" asp-for="SenderСity" class="form-control" />
+                <span asp-validation-for="SenderСity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderAddress" class="control_label"></label>
+                <input name="SenderAddress" asp-for="SenderAddress" class="form-control" />
+                <span asp-validation-for="SenderAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipientСity" class="control_label"></label>
+                <input name="RecipientСity" asp-for="RecipientСity" class="form-control" />
+                <span asp-validation-for="RecipientСity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressRecipient" class="control_label"></label>
+                <input name="AddressRecipient" asp-for="AddressRecipient" class="form-control" />
+                <span asp-validation-for="AddressRecipient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoWeight" class="control_label"></label>
+                <input name="CargoWeight" asp-for="CargoWeight" class="form-control" />
+                <span asp-validation-for="CargoWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfReceiving" class="control_label"></label>
+                <input name="DateOfReceiving" asp-for="DateOfReceiving" class="form-control" />
+                <span asp-validation-for="DateOfReceiving" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Сохранить" class="btn btn-success" />
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
